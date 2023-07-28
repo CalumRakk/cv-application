@@ -1,57 +1,135 @@
-
-
-
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-body{
-  margin-top: 30px;
-}
+  <head>
+    <style>
+      .encabezado{
+        background-color: DodgerBlue;
+      }
+      
+      .centro{
+          display:flex;
+          background-color:SlateBlue;
+          align-items: stretch;
+        }
+        
+      .centro-derecho{
+        padding: 0 1rem 0 1rem;
+        flex-grow: 2
+      }
+      .centro-izquierdo{
+        flex-grow: 1
+      }
 
-li {
-  overflow: hidden;
-  position: relative;
-  padding: 0 0 10px 35px;
-}
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="encabezado">
+        <h1>NOMBRE Y APELLIDO</h1>
+        <span>Profesion</span>
+      </header>
 
-li::before {
-  content: '';
-  position: absolute;
-  left: 9px;
-  top: 9px;
-  width: 20px;
-  height: 999px;
-  border: 2px solid red;
-  border-width: 2px 0 0 2px;
-  border-top-color: red;
-}
+      <div class="centro">
+        <aside class="centro-izquierdo">
+          <section>
+            <h3>CONTACTO</h3>
+            <ul>
+              <li>+51</li>
+              <li>ejemplo@ejemplo.com</li>
+            </ul>
+          </section>
 
-li::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 16px;
-  height: 16px;
-  background: #fff;
-  border: 2px solid lightblue;
-  border-radius: 50%;
-    border-color: red;
-  background: red;
-}
+         <section>
+            <h3>HABILIDADES</h3>
+            <h4>Lenguajes de Programación</h4>
+              <ul>
+                <li>
+                  <label for="file">Python</label>
+                  <progress id="file" value="35" max="100"> 32% </progress>
+                </li>
+                <li>
+                  <label for="file">C++</label>
+                  <progress id="file" value="35" max="100"> 32% </progress>
+                </li>
+              </ul>
 
+            <h4>Otros programas</h4>
+              <ul>
+                <li>
+                  <label for="file">DOM</label>
+                  <progress id="file" value="35" max="100"> 32% </progress>
+                </li>
+                <li>
+                  <label for="file">Excel</label>
+                  <progress id="file" value="35" max="100"> 32% </progress>
+                </li>
+              </ul>
+          </section>
 
+          <section>
+            <h3>LANGUAGE</h3>
+              <ul>
+                <li>
+                  <label for="file">Ingles</label>
+                  <progress id="file" value="35" max="100"> 32% </progress>
+                </li>
+                <li>
+                  <label for="file">Arabe</label>
+                  <progress id="file" value="35" max="100"> 32% </progress>
+                </li>
+              </ul>
+          </section>
+          
+          <section>
+            <h3>PORTAFOLIO</h3>
+            <span>www.ejemplo.com </span>
+          </section>
+        </aside>
+        
+        <div class="centro-derecho">
+          Minim consectetur deserunt aliquip non pariatur labore velit consequat et. Dolore Lorem duis magna magna magna et nostrud voluptate ut ex ex. Officia magna veniam ex eiusmod. Dolor nulla laborum qui dolor eu sit incididunt ex ipsum nulla qui ullamco ipsum culpa. Incididunt magna tempor nisi dolor proident culpa laboris sit sint cillum adipisicing. Ipsum esse elit pariatur in labore cupidatat ullamco incididunt. Est incididunt ipsum sunt nostrud est Lorem mollit proident est ipsum adipisicing consectetur dolore.
+          
+          <section>
+            <h3>Experiencia Laboral</h3>
+            <section>
+              <h4>Papichulos</h4>
+              <ul>
+                <li>Barredor - 2017-06-02/2023-03-20</li>
+              </ul>
+            </section>            
+            <section>
+              <h4>Papichulos</h4>
+              <ul>
+                <li>Barredor - 2017-06-02/2023-03-20</li>
+              </ul>
+            </section>            
+            <section>
+              <h4>Papichulos</h4>
+              <ul>
+                <li>Barredor - 2017-06-02/2023-03-20</li>
+              </ul>
+            </section>            
+          </section>
 
-</style>
-</head>
-<body>
+          <section>
+            <h3>Educación</h3>
+            <section>
+              <ul>
+                <li>Nombre del centro de estudios, Lugar</li>
+                <li>Nombre del centro de estudios, Lugar</li>
+              </ul>          
+          </section>
 
-<ul>
-  <li class="current">Titulo</li>
-  <li class="current">Titulo 2</li>
-  <li class="current">Titulo 3</li>
-  <li class="current">Titulo 4<br>
-</ul>
-</body>
+          <section>
+            <h3>Cursos y Capacitaciones</h3>
+            <ul>
+              <li>Cursos tomados y certificados</li>
+              <li>Capacitaciones tomadas y certificados</li>
+              <li>Cursos tomados y certificados</li>
+            </ul>                 
+          </section>
+        </div>
+      <div>
+    </main>
+  </body>
 </html>
