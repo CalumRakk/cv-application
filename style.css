@@ -1,2 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body * {
+  box-sizing: inherit;
+}
 
+main {
+  padding-top: 2rem;
+  /* background-color:SlateBlue; */
+}
+
+.encabezado {
+  background-color: DodgerBlue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.encabezado_contenedor {
+  max-width: 85%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.encabezado__portada {
+  width: 140px;
+  height: 140px;
+  border: 10px solid #daf9f6;
+  border-radius: 50%;
+  background-image: url("img/Carpincho\ esperando\ frente\ a\ un\ rio.png");
+  background-position: center;
+  background-size: cover;
+  margin: -0.5rem 0;
+}
+.encabezado_nombresYprofesion {
+  display: flex;
+  flex-direction: column;
+}
+
+.centro {
+  display: flex;
+}
+
+.centro__izquierdo {
+  background-color: #3e23751e;
+  flex-basis: 25%;
+  
+}
+.centro__derecho {
+  flex-basis: 60%;
+  
+}
+.contacto__contenedor{
+  width: 97%;
+  
+}
+.contacto_lista {
+  list-style-type: none;
+}
+.contacto_lista li{
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.contacto__titulo {
+  background-color: #1f005d;
+  border-right: 1px solid transparent;
+  border-top-right-radius: 0.35rem;
+  border-bottom-right-radius: 0.35rem;
+  border-color: #1f005d;
+  padding: 0.2rem;
+  color: white;
+  text-align: center;
+}
+
+.contacto__subtitulo {
+  padding-left: 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0rem;
+}
+.contacto__subtitulo::before {
+  content: "";
+  width: 0.35rem;
+  height: 0.35rem;
+  background: #000;
+  border-radius: 100%;
+  position: absolute;
+  left: 0.5rem;
+}
 
