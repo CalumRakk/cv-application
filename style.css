@@ -53,7 +53,7 @@ main {
   
 }
 .centro__derecho {
-  flex-basis: 60%;
+  flex-basis: 75%;
   
 }
 .contacto__contenedor{
@@ -112,3 +112,26 @@ main {
   border-radius: 1rem;
 }
 
+.experiencia_laboral__contenedor{
+  border-left-style: solid ;
+  border-left-color: red;
+  margin-left: 1rem;
+}
+
+.experiencia_laboral__titulo{
+  top: -0.5rem;
+  position: relative;  
+  padding-left: 1rem;
+}
+
+
+.experiencia_laboral__titulo::before{
+  content: "";
+  width: 1rem;
+  height: 0.2rem;
+  background: red;
+  position: absolute;
+  top: 0.5rem;
+  left: -0.08rem; 
+
+}
