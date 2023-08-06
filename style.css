@@ -67,6 +67,7 @@ main {
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  margin-top: 0.7rem;
 }
 .contacto__titulo {
   background-color: #1f005d;
@@ -94,5 +95,20 @@ main {
   border-radius: 100%;
   position: absolute;
   left: 0.5rem;
+}
+
+.progress{
+  background-color: #010d59;
+  height: 1.2rem;
+  width: 8rem;  
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-left: .5rem;
+}
+.progress-bar{  
+  background-color: #f19d20;
+  height: inherit;
+  width: 30%;
+  border-radius: 1rem;
 }
 
