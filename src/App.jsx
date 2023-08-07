@@ -1,79 +1,109 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './style.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./style.css";
+import {
+  handle_fullname_change,
+  handle_profesion_change,
+  handle_portadaURL_change,
+} from "./utils";
 
-function Encebezado({ profesion="Programador", fullnombre, portadaURL  }) {
+function Encebezado({ profesion = "Programador", fullnombre, portadaURL }) {
   return (
     <div className="cv__encabezado">
       <div className="encabezado_contenedor">
         {/* <div className="encabezado__portada" style={cvStyle}></div> */}
         <img className="encabezado__portada" src={portadaURL} alt="Vite logo" />
         <div className="encabezado_nombresYprofesion">
-          <h1 className="encabezado__nombre" id="fname">{fullnombre}</h1>
+          <h1 className="encabezado__nombre" id="fname">
+            {fullnombre}
+          </h1>
           <span className="encabezado__profesion">{profesion}</span>
         </div>
       </div>
     </div>
-  )
+  );
+}
+
+function Formulario({
+  fullnombre,
+  profesion,
+  handle_fullname_change,
+  handle_profesion_change,
+  handle_portadaURL_change,
+}) {
+  return (
+    <form className="form-encabezado">
+      <section>
+        <label htmlFor="fname">Nombre y Apellido</label>
+        <input
+          type="text"
+          onChange={handle_fullname_change}
+          placeholder={fullnombre}
+        />
+      </section>
+      <section>
+        <label htmlFor="fname">Profesión</label>
+        <input
+          type="text"
+          onChange={handle_profesion_change}
+          placeholder={profesion}
+        />
+      </section>
+      <section>
+        <label htmlFor="myfile">Imagen</label>
+        <input type="file" onChange={handle_portadaURL_change} />
+      </section>
+    </form>
+  );
 }
 
 function App() {
-  const [fullnombre, setfullnombre] = useState('Leonardo C.');
-  const [profesion, setprofesion] = useState('Programador');
-  const [portadaURL, setportadaURL] = useState('img/Carpincho\ esperando\ frente\ a\ un\ rio.png');
-
-  function handle_fullname_change (e) {
-    setfullnombre(e.target.value);
-  };
-  function handle_profesion_change (e) {
-    setprofesion(e.target.value);
-  };
-  function handle_portadaURL_change (e) {
-    const selectedFile = e.target.files[0];
-    if (selectedFile) {
-      const fondoURL = URL.createObjectURL(selectedFile);      
-      setportadaURL(fondoURL);
-    }
-    
-    
-  };
-
-
-
+  const [fullnombre, setfullnombre] = useState("Leonardo C.");
+  const [profesion, setprofesion] = useState("Programador");
+  const [portadaURL, setportadaURL] = useState(
+    "img/Carpincho esperando frente a un rio.png"
+  );
 
   return (
     <>
-      <main> 
+      <main>
         <aside className="formulario">
-          <form className="form-encabezado"> 
-            <section>
-              <label for="fname">Nombre y Apellido</label>                     
-              <input type="text" onChange={handle_fullname_change} placeholder={fullnombre}/>
-            </section>
-            <section>
-              <label for="fname">Profesión</label>                     
-              <input type="text" onChange={handle_profesion_change} placeholder={profesion}/>
-            </section>
-            <section>
-              <label for="myfile">Imagen</label>
-              <input type="file" onChange={handle_portadaURL_change} />
-            </section>
-          </form>  
+          <Formulario
+            fullnombre={fullnombre}
+            profesion={profesion}
+            handle_fullname_change={(e) =>
+              handle_fullname_change(e, setfullnombre)
+            }
+            handle_profesion_change={(e) =>
+              handle_profesion_change(e, setprofesion)
+            }
+            handle_portadaURL_change={(e) =>
+              handle_portadaURL_change(e, setportadaURL)
+            }
+          />
+        </aside>
 
-
-        </aside>  
-
-             
         <aside className="cv">
-          <Encebezado fullnombre={fullnombre} profesion={profesion} portadaURL={portadaURL}/>
-          
+          <Encebezado
+            fullnombre={fullnombre}
+            profesion={profesion}
+            portadaURL={portadaURL}
+          />
+
           <div className="cv__izquierdo">
             <section className="contacto__contenedor">
               <h3 className="contacto__titulo">CONTACTO</h3>
               <ul className="contacto_lista">
-                <li className="contacto__icon"> <img src="src/assets/mail.svg" width="16px"/> +51</li>
-                <li className="contacto__icon"> <img src="src/assets/telefono.svg" width="16px"/> ejemplo@ejemplo.com</li>
+                <li className="contacto__icon">
+                  {" "}
+                  <img src="src/assets/mail.svg" width="16px" /> +51
+                </li>
+                <li className="contacto__icon">
+                  {" "}
+                  <img src="src/assets/telefono.svg" width="16px" />{" "}
+                  ejemplo@ejemplo.com
+                </li>
               </ul>
             </section>
 
@@ -83,23 +113,23 @@ function App() {
               <ul className="contacto_lista">
                 <li>
                   <span>Python</span>
-                  <div className="progress" >
+                  <div className="progress">
                     <div className="progress-bar">35%</div>
                   </div>
                 </li>
                 <li>
                   <span>C++</span>
-                  <div className="progress" >
+                  <div className="progress">
                     <div className="progress-bar">35%</div>
                   </div>
                 </li>
               </ul>
 
-            <h4 className="contacto__subtitulo">Otros programas</h4>
+              <h4 className="contacto__subtitulo">Otros programas</h4>
               <ul className="contacto_lista">
                 <li>
                   <span>DOM</span>
-                  <div className="progress" >
+                  <div className="progress">
                     <div className="progress-bar">35%</div>
                   </div>
                 </li>
@@ -111,93 +141,110 @@ function App() {
                 </li>
               </ul>
             </section>
-            
+
             <section className="contacto__contenedor">
               <h3 className="contacto__titulo">LANGUAGE</h3>
               <ul className="contacto_lista">
                 <li>
                   <span>Ingles</span>
-                  <div className="progress" >
+                  <div className="progress">
                     <div className="progress-bar">35%</div>
                   </div>
                 </li>
                 <li>
                   <span>Arabe</span>
-                  <div className="progress" >
+                  <div className="progress">
                     <div className="progress-bar">35%</div>
                   </div>
                 </li>
               </ul>
             </section>
-            
+
             <section className="contacto__contenedor">
               <h3 className="contacto__titulo">PORTAFOLIO</h3>
               <span>www.ejemplo.com </span>
-            </section> 
+            </section>
           </div>
 
-          <div class="cv__derecho">
-            Breve presentación y descripción de tus fortalezas y cualidades que te hacen un  buen postulante al empleo.
-  ******************************************************************************************************************
-            <div class="experienciaLaboral">
-              <section class="experienciaLaboral__elementos">
-                <h3 class="experienciaLaboral__titulo">Experiencia Laboral</h3>
+          <div className="cv__derecho">
+            Breve presentación y descripción de tus fortalezas y cualidades que
+            te hacen un buen postulante al empleo.
+            ******************************************************************************************************************
+            <div className="experienciaLaboral">
+              <section className="experienciaLaboral__elementos">
+                <h3 className="experienciaLaboral__titulo">
+                  Experiencia Laboral
+                </h3>
                 <section>
-                  <h4 class="experienciaLaboral__subtitulo">Nombre de la empresa, Lugar</h4>
+                  <h4 className="experienciaLaboral__subtitulo">
+                    Nombre de la empresa, Lugar
+                  </h4>
                   <ul>
-                    <li>Puesto desempeñado, fecha de inicio - fecha de salida</li>
+                    <li>
+                      Puesto desempeñado, fecha de inicio - fecha de salida
+                    </li>
                   </ul>
                 </section>
                 <section>
-                  <h4 class="experienciaLaboral__subtitulo">Nombre de la empresa, Lugar</h4>
+                  <h4 className="experienciaLaboral__subtitulo">
+                    Nombre de la empresa, Lugar
+                  </h4>
                   <ul>
-                    <li>Puesto desempeñado, fecha de inicio - fecha de salida</li>
+                    <li>
+                      Puesto desempeñado, fecha de inicio - fecha de salida
+                    </li>
                   </ul>
                 </section>
                 <section>
-                  <h4 class="experienciaLaboral__subtitulo">Nombre de la empresa, Lugar</h4>
+                  <h4 className="experienciaLaboral__subtitulo">
+                    Nombre de la empresa, Lugar
+                  </h4>
                   <ul>
-                    <li>Puesto desempeñado, fecha de inicio - fecha de salida</li>
+                    <li>
+                      Puesto desempeñado, fecha de inicio - fecha de salida
+                    </li>
                   </ul>
                 </section>
-              </section> 
-    
-              
-              <section class="experienciaLaboral__elementos">
-                <h3 class="experienciaLaboral__titulo">Educación</h3>
+              </section>
+
+              <section className="experienciaLaboral__elementos">
+                <h3 className="experienciaLaboral__titulo">Educación</h3>
                 <section>
-                  <h4 class="experienciaLaboral__subtitulo">Nombre del cv de estudios, Lugar</h4>
+                  <h4 className="experienciaLaboral__subtitulo">
+                    Nombre del cv de estudios, Lugar
+                  </h4>
                   <p>Nombre de la carrera , año de inicio</p>
                 </section>
                 <section>
-                  <h4 class="experienciaLaboral__subtitulo">Nombre del cv de estudios, Lugar</h4>
+                  <h4 className="experienciaLaboral__subtitulo">
+                    Nombre del cv de estudios, Lugar
+                  </h4>
                   <p>Nombre de la carrera , año de inicio</p>
                 </section>
                 <section>
-                  <h4 class="experienciaLaboral__subtitulo">Nombre del cv de estudios, Lugar</h4>
+                  <h4 className="experienciaLaboral__subtitulo">
+                    Nombre del cv de estudios, Lugar
+                  </h4>
                   <p>Nombre de la carrera , año de inicio</p>
                 </section>
               </section>
-              
-              <section class="experienciaLaboral__elementos">
-                <h3 class="experienciaLaboral__titulo">Cursos y Capacitaciones</h3>
+
+              <section className="experienciaLaboral__elementos">
+                <h3 className="experienciaLaboral__titulo">
+                  Cursos y Capacitaciones
+                </h3>
                 <ul>
                   <li>Cursos tomados y certificados</li>
                   <li>Capacitaciones tomadas y certificados</li>
                   <li>Cursos tomados y certificados</li>
-                </ul>                 
+                </ul>
               </section>
-              
             </div>
           </div>
-
-        </aside> 
-            
+        </aside>
       </main>
-    
-    
     </>
-  )
+  );
 }
 
-export default App
+export default App;
