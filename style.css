@@ -14,7 +14,7 @@ main {
 }
 
 .encabezado {
-  background-color: DodgerBlue;
+  background-color: #1f005d;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -31,16 +31,18 @@ main {
 .encabezado__portada {
   width: 140px;
   height: 140px;
-  border: 10px solid #daf9f6;
+  border: 10px solid #fefeff;
   border-radius: 50%;
   background-image: url("img/Carpincho\ esperando\ frente\ a\ un\ rio.png");
   background-position: center;
   background-size: cover;
   margin: -0.5rem 0;
+  z-index: 1;
 }
 .encabezado_nombresYprofesion {
   display: flex;
   flex-direction: column;
+  color:#fefeff;
 }
 
 .centro {
@@ -49,12 +51,13 @@ main {
 
 .centro__izquierdo {
   background-color: #3e23751e;
-  flex-basis: 25%;
+  flex-basis: 15%;
   
 }
 .centro__derecho {
   flex-basis: 75%;
-  
+  margin-left: 2rem;
+  margin-top: 1rem;  
 }
 .contacto__contenedor{
   width: 97%;
@@ -115,7 +118,6 @@ main {
 
 .experienciaLaboral{
   border-left: 0.2rem solid #1e005c;
-  margin-left: 1rem;
   position: relative;
   padding-left: 1rem;
 }
@@ -146,6 +148,8 @@ main {
 .experienciaLaboral__subtitulo{
   display: flex;
   align-items: center;
+  margin-bottom: 0.8rem;
+  
 }
 
 .experienciaLaboral__subtitulo::before{
@@ -162,5 +166,14 @@ main {
   margin-bottom: 2rem;
 }
 
+h4 + p{
+  margin-top: 0rem;
+}
 
+.experienciaLaboral__elementos section{
+  margin-left: 1.55rem;
+}
 
+h4{
+  white-space: nowrap;
+}
