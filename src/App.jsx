@@ -1,62 +1,12 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./style.css";
+import { Encebezado } from "./componentes/Encebezado.jsx";
+import { Formulario } from "./componentes/Formulario.jsx";
 import {
   handle_fullname_change,
   handle_profesion_change,
   handle_portadaURL_change,
 } from "./utils";
-
-function Encebezado({ profesion = "Programador", fullnombre, portadaURL }) {
-  return (
-    <div className="cv__encabezado">
-      <div className="encabezado_contenedor">
-        {/* <div className="encabezado__portada" style={cvStyle}></div> */}
-        <img className="encabezado__portada" src={portadaURL} alt="Vite logo" />
-        <div className="encabezado_nombresYprofesion">
-          <h1 className="encabezado__nombre" id="fname">
-            {fullnombre}
-          </h1>
-          <span className="encabezado__profesion">{profesion}</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Formulario({
-  fullnombre,
-  profesion,
-  handle_fullname_change,
-  handle_profesion_change,
-  handle_portadaURL_change,
-}) {
-  return (
-    <form className="form-encabezado">
-      <section>
-        <label htmlFor="fname">Nombre y Apellido</label>
-        <input
-          type="text"
-          onChange={handle_fullname_change}
-          placeholder={fullnombre}
-        />
-      </section>
-      <section>
-        <label htmlFor="fname">Profesión</label>
-        <input
-          type="text"
-          onChange={handle_profesion_change}
-          placeholder={profesion}
-        />
-      </section>
-      <section>
-        <label htmlFor="myfile">Imagen</label>
-        <input type="file" onChange={handle_portadaURL_change} />
-      </section>
-    </form>
-  );
-}
 
 function App() {
   const [fullnombre, setfullnombre] = useState("Leonardo C.");

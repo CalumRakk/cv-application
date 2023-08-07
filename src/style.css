@@ -208,3 +208,23 @@ li.contacto__icon{
 .experienciaLaboral__elementos section{
   margin-left: 1.55rem;
 }
+
+.form-encabezado{
+  padding: 2rem;
+}
+.form-encabezado__elementos{
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-direction: column;
+}
+.form-encabezado__elementos input{
+  background-color: #f3f4f6;;
+  border: 0.1rem solid transparent;
+  border-radius: 1rem;
+  padding: 0.7rem;  
+}
+
+.form-encabezado_label{
+  font-weight: bold;
+}
