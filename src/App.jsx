@@ -3,11 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './style.css'
 
-function Encebezado({ profesion="Programador", fullnombre  }) {
+function Encebezado({ profesion="Programador", fullnombre, portadaURL  }) {
   return (
     <div className="cv__encabezado">
       <div className="encabezado_contenedor">
-        <div className="encabezado__portada"></div>
+        {/* <div className="encabezado__portada" style={cvStyle}></div> */}
+        <img className="encabezado__portada" src={portadaURL} alt="Vite logo" />
         <div className="encabezado_nombresYprofesion">
           <h1 className="encabezado__nombre" id="fname">{fullnombre}</h1>
           <span className="encabezado__profesion">{profesion}</span>
@@ -19,10 +20,26 @@ function Encebezado({ profesion="Programador", fullnombre  }) {
 
 function App() {
   const [fullnombre, setfullnombre] = useState('Leonardo C.');
+  const [profesion, setprofesion] = useState('Programador');
+  const [portadaURL, setportadaURL] = useState('img/Carpincho\ esperando\ frente\ a\ un\ rio.png');
 
   function handle_fullname_change (e) {
     setfullnombre(e.target.value);
   };
+  function handle_profesion_change (e) {
+    setprofesion(e.target.value);
+  };
+  function handle_portadaURL_change (e) {
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      const fondoURL = URL.createObjectURL(selectedFile);      
+      setportadaURL(fondoURL);
+    }
+    
+    
+  };
+
+
 
 
   return (
@@ -34,6 +51,14 @@ function App() {
               <label for="fname">Nombre y Apellido</label>                     
               <input type="text" onChange={handle_fullname_change} placeholder={fullnombre}/>
             </section>
+            <section>
+              <label for="fname">Profesión</label>                     
+              <input type="text" onChange={handle_profesion_change} placeholder={profesion}/>
+            </section>
+            <section>
+              <label for="myfile">Imagen</label>
+              <input type="file" onChange={handle_portadaURL_change} />
+            </section>
           </form>  
 
 
@@ -41,7 +66,7 @@ function App() {
 
              
         <aside className="cv">
-          <Encebezado fullnombre={fullnombre}/>
+          <Encebezado fullnombre={fullnombre} profesion={profesion} portadaURL={portadaURL}/>
           
           <div className="cv__izquierdo">
             <section className="contacto__contenedor">

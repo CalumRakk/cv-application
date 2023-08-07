@@ -57,7 +57,7 @@ main{
   height: 140px;
   border: 10px solid #fefeff;
   border-radius: 50%;
-  background-image: url("img/Carpincho\ esperando\ frente\ a\ un\ rio.png");
+  /* background-image: url("img/Carpincho\ esperando\ frente\ a\ un\ rio.png"); */
   background-position: center;
   background-size: cover;
   margin: -0.5rem 0;
