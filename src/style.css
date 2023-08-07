@@ -30,6 +30,7 @@ main{
   padding: 0.8rem;
   position: relative;
   overflow: hidden;
+  flex-basis: 65%;
 }
 
 .cv__encabezado{
@@ -143,13 +144,16 @@ li.contacto__icon{
   width: 8rem;  
   border-radius: 1rem;
   overflow: hidden;
-  margin-left: .5rem;
+  margin-right: 10%;
+
 }
 .progress-bar{  
   background-color: #f19d20;
   height: inherit;
   width: 30%;
   border-radius: 1rem;
+  padding-left: .5rem;
+  
 }
 
 .experienciaLaboral{
