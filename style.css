@@ -68,6 +68,7 @@ main {
   align-items: center;
   gap: 0.25rem;
   margin-top: 0.7rem;
+  justify-content: space-between;
 }
 .contacto__titulo {
   background-color: #1f005d;
@@ -112,15 +113,14 @@ main {
   border-radius: 1rem;
 }
 
-.experiencia_laboral__contenedor{
-  border-left-style: solid ;
-  border-left-color: #1e005c;
+.experienciaLaboral{
+  border-left: 0.2rem solid #1e005c;
   margin-left: 1rem;
   position: relative;
   padding-left: 1rem;
 }
 
-.experiencia_laboral__titulo{
+.experienciaLaboral__titulo{
   top: -1rem;
   left: 0.7rem;
   position: relative;  
@@ -131,7 +131,7 @@ main {
   color: #240760;
 }
 
-.experiencia_laboral__titulo::before{
+.experienciaLaboral__titulo::before{
   content: "";
   width: 2rem;
   height: 0.2rem;
@@ -142,13 +142,20 @@ main {
   z-index: -1;
 }
 
-.experiencia_laboral__elementos::before{
+.experienciaLaboral__subtitulo{
+  display: flex;
+  align-items: center;
+}
+
+.experienciaLaboral__subtitulo::before{
   content:"";
   width: 0.8rem;
   height: 0.8rem;
   background-color: #1e005c;
   position: absolute;
-  border-radius: 50%;
+  border-radius: 100%;
   left: -0.5rem;
 }
+
+
 
