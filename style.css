@@ -4,22 +4,41 @@ body {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-body * {
-  box-sizing: inherit;
-}
 
-main {
-  padding-top: 2rem;
-  /* background-color:SlateBlue; */
-}
-
-.encabezado {
+header{
   background-color: #1f005d;
+  width: 100%;
+}
+
+main{
+  display: flex;
+}
+
+.formulario{
+  background-color: #3e23751e;
+  flex-basis: 35%;
+}
+
+.cv{
+  flex-basis: 65%;
+  display: flex;
+  padding: 0.8rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.cv__encabezado{
+  position: absolute;
+  background-color: #1f005d;
+  width: 100%;
+  top: 1.8rem;
+  color:white;
+
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-
 .encabezado_contenedor {
   max-width: 85%;
   width: 100%;
@@ -39,28 +58,28 @@ main {
   margin: -0.5rem 0;
   z-index: 1;
 }
+
 .encabezado_nombresYprofesion {
   display: flex;
   flex-direction: column;
   color:#fefeff;
+  justify-content: center;
 }
 
-.centro {
-  display: flex;
-}
 
-.centro__izquierdo {
-  background-color: #3e23751e;
-  flex-basis: 15%;
+.cv__izquierdo{
+  padding: 11rem 0 0 0;
+  background-color: #e6e1f3;
+  flex-basis: 35%;
+}
+.cv__derecho{
+  padding: 11rem 0 0 1rem;
+  flex-basis: 65%;
   
 }
-.centro__derecho {
-  flex-basis: 75%;
-  margin-left: 2rem;
-  margin-top: 1rem;  
-}
+
 .contacto__contenedor{
-  width: 97%;
+  width: 96%;
   
 }
 .contacto_lista {
@@ -101,79 +120,3 @@ main {
   left: 0.5rem;
 }
 
-.progress{
-  background-color: #010d59;
-  height: 1.2rem;
-  width: 8rem;  
-  border-radius: 1rem;
-  overflow: hidden;
-  margin-left: .5rem;
-}
-.progress-bar{  
-  background-color: #f19d20;
-  height: inherit;
-  width: 30%;
-  border-radius: 1rem;
-}
-
-.experienciaLaboral{
-  border-left: 0.2rem solid #1e005c;
-  position: relative;
-  padding-left: 1rem;
-}
-
-.experienciaLaboral__titulo{
-  top: -1rem;
-  left: 0.7rem;
-  position: relative;  
-  background-color: #e2ddf0;
-  border-radius: 1rem;
-  width: 15rem;
-  padding: 0.5rem;
-  color: #240760;
-  padding-left: 0.8rem;
-}
-
-.experienciaLaboral__titulo::before{
-  content: "";
-  width: 2rem;
-  height: 0.2rem;
-  background: #1e005c;
-  position: absolute;
-  top: 1rem;
-  left: -1.7rem;
-  z-index: -1;
-}
-
-.experienciaLaboral__subtitulo{
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.8rem;
-  
-}
-
-.experienciaLaboral__subtitulo::before{
-  content:"";
-  width: 0.8rem;
-  height: 0.8rem;
-  background-color: #1e005c;
-  position: absolute;
-  border-radius: 100%;
-  left: -0.5rem;
-}
-
-.experienciaLaboral__elementos{
-  margin-bottom: 2rem;
-}
-
-h4 + p{
-  margin-top: 0rem;
-}
-
-.experienciaLaboral__elementos section{
-  margin-left: 1.55rem;
-}
-
-h4{
-  white-space: nowrap;
-}
