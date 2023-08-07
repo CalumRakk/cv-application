@@ -126,9 +126,10 @@ main {
   position: relative;  
   background-color: #e2ddf0;
   border-radius: 1rem;
-  width: 12rem;
+  width: 15rem;
   padding: 0.5rem;
   color: #240760;
+  padding-left: 0.8rem;
 }
 
 .experienciaLaboral__titulo::before{
@@ -155,6 +156,10 @@ main {
   position: absolute;
   border-radius: 100%;
   left: -0.5rem;
+}
+
+.experienciaLaboral__elementos{
+  margin-bottom: 2rem;
 }
 
 
