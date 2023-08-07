@@ -116,6 +116,8 @@ main {
   border-left-style: solid ;
   border-left-color: #1e005c;
   margin-left: 1rem;
+  position: relative;
+  padding-left: 1rem;
 }
 
 .experiencia_laboral__titulo{
@@ -127,17 +129,26 @@ main {
   width: 12rem;
   padding: 0.5rem;
   color: #240760;
- 
 }
 
 .experiencia_laboral__titulo::before{
   content: "";
-  width: 1rem;
+  width: 2rem;
   height: 0.2rem;
   background: #1e005c;
   position: absolute;
   top: 1rem;
-  left: -0.7rem;
-  z-index: -1; 
-
+  left: -1.7rem;
+  z-index: -1;
 }
+
+.experiencia_laboral__elementos::before{
+  content:"";
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #1e005c;
+  position: absolute;
+  border-radius: 50%;
+  left: -0.5rem;
+}
+
