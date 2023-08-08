@@ -16,3 +16,11 @@ export const handle_portadaURL_change = (e, setportadaURL) => {
     setportadaURL(fondoURL);
   }
 };
+
+export const handle_telefono_change = (e, setTelefono) => {
+  setTelefono(e.target.value);
+};
+
+export const handle_correo_change = (e, setCorreo) => {
+  setCorreo(e.target.value);
+};

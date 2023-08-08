@@ -2,11 +2,23 @@ import { useState } from "react";
 import "./style.css";
 import { Encebezado } from "./componentes/Encebezado.jsx";
 import { Formulario } from "./componentes/Formulario.jsx";
+import {Contacto } from "./componentes/Contacto.jsx";
 import {
   handle_fullname_change,
   handle_profesion_change,
   handle_portadaURL_change,
+  handle_telefono_change,
+  handle_correo_change
 } from "./utils";
+
+
+const FormularioSeccion = ({ isOpen, children }) => {
+  return (
+    <div className={`formulario-seccion ${isOpen ? 'open' : ''}`}>
+      {children}      
+    </div>
+  );
+};
 
 function App() {
   const [fullnombre, setfullnombre] = useState("Leonardo C.");
@@ -15,6 +27,11 @@ function App() {
     "img/Carpincho esperando frente a un rio.png"
   );
 
+  const [telefono, setTelefono] = useState("+5731234567");
+  const [correo, setCorreo] = useState("Leoca34@gmail.com");
+
+  const [formularioVisible, setFormularioVisible] = useState(true);
+
   return (
     <>
       <main>
@@ -22,6 +39,8 @@ function App() {
           <Formulario
             fullnombre={fullnombre}
             profesion={profesion}
+            telefono={telefono}
+            correo={correo}
             handle_fullname_change={(e) =>
               handle_fullname_change(e, setfullnombre)
             }
@@ -31,7 +50,21 @@ function App() {
             handle_portadaURL_change={(e) =>
               handle_portadaURL_change(e, setportadaURL)
             }
+            handle_telefono_change={(e) =>
+              handle_telefono_change(e, setTelefono)
+            }
+            handle_correo_change={(e) =>
+              handle_correo_change(e, setCorreo)
+            }
           />
+
+          <button onClick={() => setFormularioVisible(!formularioVisible)}> {formularioVisible ? 'Cerrar' : 'Abrir'} Formulario</button>          
+          <FormularioSeccion isOpen={formularioVisible}>            
+            <form className="form-encabezado">
+              <input type="text" placeholder="prueba"/>
+            </form>
+         </FormularioSeccion>
+
         </aside>
 
         <aside className="cv">
@@ -42,21 +75,10 @@ function App() {
           />
 
           <div className="cv__izquierdo">
-            <section className="contacto__contenedor">
-              <h3 className="contacto__titulo">CONTACTO</h3>
-              <ul className="contacto_lista">
-                <li className="contacto__icon">
-                  {" "}
-                  <img src="src/assets/mail.svg" width="16px" /> +51
-                </li>
-                <li className="contacto__icon">
-                  {" "}
-                  <img src="src/assets/telefono.svg" width="16px" />{" "}
-                  ejemplo@ejemplo.com
-                </li>
-              </ul>
-            </section>
-
+            <Contacto
+              telefono={telefono}
+              correo={correo}
+            />
             <section className="contacto__contenedor">
               <h3 className="contacto__titulo">HABILIDADES</h3>
               <h4 className="contacto__subtitulo">Lenguajes de Programación</h4>

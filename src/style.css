@@ -31,6 +31,7 @@ main{
   position: relative;
   overflow: hidden;
   flex-basis: 65%;
+ 
 }
 
 .cv__encabezado{
@@ -214,8 +215,8 @@ li.contacto__icon{
 }
 .form-encabezado__elementos{
   display: flex;
-  gap: 6px;
-  margin-bottom: 12px;
+  gap: 0.2rem;
+  margin-bottom: 0.9rem;
   flex-direction: column;
 }
 .form-encabezado__elementos input{
@@ -228,3 +229,32 @@ li.contacto__icon{
 .form-encabezado_label{
   font-weight: bold;
 }
+
+
+.formulario-seccion {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.formulario-seccion.open {
+  max-height: 1000px; /* Establece una altura máxima que sea mayor que el contenido */
+}
+
+.formulario-seccion button {
+  margin-top: 10px;
+}
+
+.cv__derecho{
+  background-image: url("img/output-onlinepngtools.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+} 
+
+/* .cv__derecho{
+  z-index: -1;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  background-image: url("https://media-public.canva.com/MADQ5Phk4sY/1/screen.jpg");
+} */
+
