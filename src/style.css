@@ -31,7 +31,6 @@ main{
   position: relative;
   overflow: hidden;
   flex-basis: 65%;
- 
 }
 
 .cv__encabezado{
@@ -210,9 +209,14 @@ li.contacto__icon{
   margin-left: 1.55rem;
 }
 
-.form-encabezado{
-  padding: 2rem;
+form.form-encabezado:first-child{
+  padding-top: 2rem;
 }
+
+.form-encabezado{
+  padding: 0 2rem 1.5rem 2rem;
+}
+
 .form-encabezado__elementos{
   display: flex;
   gap: 0.2rem;
@@ -223,7 +227,7 @@ li.contacto__icon{
   background-color: #f3f4f6;;
   border: 0.1rem solid transparent;
   border-radius: 0.5rem;
-  padding: 0.7rem;  
+  padding: 0.7rem;
 }
 
 .form-encabezado_label{
@@ -284,3 +288,19 @@ li.contacto__icon{
 .custom-file-input label:hover {
   background-color: #1e015d;
 }
+.form-encabezado__fullnombreYprofesion{
+  display: flex;
+  gap: 2rem;
+}
+section.form-encabezado__elementos:nth-child(1){
+  flex-basis: 70%;
+}
+section.form-encabezado__elementos:nth-child(2){
+  flex-basis: 30%;
+}
+
+.cv__encabezado h1,h2,span{
+  text-transform:capitalize;
+}
+
+

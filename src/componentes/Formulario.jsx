@@ -12,24 +12,26 @@ export function Formulario({
 }) {
   return (
     <>
-      <form className="form-encabezado">        
-        <section className="form-encabezado__elementos">
-          <label className="form-encabezado_label">Nombre y Apellido</label>
-          <input
-            type="text"
-            onChange={handle_fullname_change}
-            placeholder={fullnombre}
-          />
-        </section>
+      <form className="form-encabezado"> 
+        <div className="form-encabezado__fullnombreYprofesion">
+          <section className="form-encabezado__elementos">
+              <label className="form-encabezado_label">Nombre y Apellido</label>
+              <input
+                type="text"
+                onChange={handle_fullname_change}
+                placeholder={fullnombre}
+              />
+            </section>
 
-        <section className="form-encabezado__elementos">
-          <label className="form-encabezado_label">Profesión</label>
-          <input
-            type="text"
-            onChange={handle_profesion_change}
-            placeholder={profesion}
-          />
-        </section>
+            <section className="form-encabezado__elementos">
+              <label className="form-encabezado_label">Profesión</label>
+              <input
+                type="text"
+                onChange={handle_profesion_change}
+                placeholder={profesion}
+              />
+            </section>        
+      </div>       
         <section className="form-encabezado__elementos">
           {/* <label className="form-encabezado_label">Imagen</label>
           <input type="file" onChange={handle_portadaURL_change} /> */}
@@ -40,24 +42,26 @@ export function Formulario({
         </section>
       </form>
 
-      <form className="form-encabezado">        
-        <section className="form-encabezado__elementos">
-          <label className="form-encabezado_label">Telefono</label>
-          <input
-            type="text"
-            onChange={handle_telefono_change}
-            placeholder={telefono}
-          />
-        </section>
+      <form className="form-encabezado">
+        <div className="form-encabezado__fullnombreYprofesion">
+          <section className="form-encabezado__elementos">
+            <label className="form-encabezado_label">Telefono</label>
+            <input
+              type="text"
+              onChange={handle_telefono_change}
+              placeholder={telefono}
+            />
+          </section>
 
-        <section className="form-encabezado__elementos">
-          <label className="form-encabezado_label">Email</label>
-          <input
-            type="text"
-            onChange={handle_correo_change}
-            placeholder={correo}
-          />
-        </section>
+          <section className="form-encabezado__elementos">
+            <label className="form-encabezado_label">Email</label>
+            <input
+              type="text"
+              onChange={handle_correo_change}
+              placeholder={correo}
+            />
+          </section>          
+        </div>      
       </form>
     
     </>
