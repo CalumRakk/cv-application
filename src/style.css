@@ -222,7 +222,7 @@ li.contacto__icon{
 .form-encabezado__elementos input{
   background-color: #f3f4f6;;
   border: 0.1rem solid transparent;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   padding: 0.7rem;  
 }
 
@@ -258,3 +258,29 @@ li.contacto__icon{
   background-image: url("https://media-public.canva.com/MADQ5Phk4sY/1/screen.jpg");
 } */
 
+
+.custom-file-input {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-file-input input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.custom-file-input label {
+  display: inline-block;
+  background-color: #1e015db4;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-file-input label:hover {
+  background-color: #1e015d;
+}

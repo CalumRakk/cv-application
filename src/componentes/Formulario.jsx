@@ -13,8 +13,8 @@ export function Formulario({
   return (
     <>
       <form className="form-encabezado">        
-        <section class="form-encabezado__elementos">
-          <label class="form-encabezado_label">Nombre y Apellido</label>
+        <section className="form-encabezado__elementos">
+          <label className="form-encabezado_label">Nombre y Apellido</label>
           <input
             type="text"
             onChange={handle_fullname_change}
@@ -22,23 +22,27 @@ export function Formulario({
           />
         </section>
 
-        <section class="form-encabezado__elementos">
-          <label class="form-encabezado_label">Profesión</label>
+        <section className="form-encabezado__elementos">
+          <label className="form-encabezado_label">Profesión</label>
           <input
             type="text"
             onChange={handle_profesion_change}
             placeholder={profesion}
           />
         </section>
-        <section class="form-encabezado__elementos">
-          <label class="form-encabezado_label">Imagen</label>
-          <input type="file" onChange={handle_portadaURL_change} />
+        <section className="form-encabezado__elementos">
+          {/* <label className="form-encabezado_label">Imagen</label>
+          <input type="file" onChange={handle_portadaURL_change} /> */}
+          <div className="custom-file-input">
+            <input type="file" onChange={handle_portadaURL_change} id="fileInput" style={{display: "none"}}/>
+            <label htmlFor="fileInput">Seleccionar archivo</label>
+          </div>
         </section>
       </form>
 
       <form className="form-encabezado">        
-        <section class="form-encabezado__elementos">
-          <label class="form-encabezado_label">Telefono</label>
+        <section className="form-encabezado__elementos">
+          <label className="form-encabezado_label">Telefono</label>
           <input
             type="text"
             onChange={handle_telefono_change}
@@ -46,8 +50,8 @@ export function Formulario({
           />
         </section>
 
-        <section class="form-encabezado__elementos">
-          <label class="form-encabezado_label">Email</label>
+        <section className="form-encabezado__elementos">
+          <label className="form-encabezado_label">Email</label>
           <input
             type="text"
             onChange={handle_correo_change}
