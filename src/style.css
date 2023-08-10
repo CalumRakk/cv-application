@@ -5,27 +5,27 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-header{
+header {
   background-color: #1f005d;
   width: 100%;
 }
 
-main{
+main {
   display: flex;
 }
 
 @media only screen and (max-width: 800px) {
-  main { 
-    flex-direction: column;  
+  main {
+    flex-direction: column;
   }
 }
 
-.formulario{
+.formulario {
   background-color: #3e23751e;
   flex-basis: 35%;
 }
 
-.cv{
+.cv {
   display: flex;
   padding: 0.8rem;
   position: relative;
@@ -33,12 +33,12 @@ main{
   flex-basis: 65%;
 }
 
-.cv__encabezado{
+.cv__encabezado {
   position: absolute;
   background-color: #1f005d;
   width: 100%;
   top: 1.8rem;
-  color:white;
+  color: white;
 
   display: flex;
   flex-direction: row;
@@ -67,46 +67,43 @@ main{
 .encabezado_nombresYprofesion {
   display: flex;
   flex-direction: column;
-  color:#fefeff;
+  color: #fefeff;
   justify-content: center;
 }
 
-
-.cv__izquierdo{
+.cv__izquierdo {
   padding: 11rem 0 0 0;
   background-color: #e6e1f3;
   flex-basis: 35%;
 
   font-weight: bold;
 }
-.cv__derecho{
+.cv__derecho {
   padding: 11rem 0 0 1rem;
   flex-basis: 65%;
   /* white-space:normal;
   word-wrap: break-word; */
-  
+
   /* white-space:normal;
   word-wrap: break-word;
-  word-break: break-all */  
+  word-break: break-all */
   overflow: hidden;
-
 }
 
-.contacto__contenedor{
+.contacto__contenedor {
   width: 96%;
-  
 }
 .contacto_lista {
   list-style-type: none;
 }
-.contacto_lista li{
+.contacto_lista li {
   display: flex;
   align-items: center;
   gap: 0.25rem;
   margin-top: 0.7rem;
   justify-content: space-between;
 }
-li.contacto__icon{
+li.contacto__icon {
   justify-content: flex-start;
 }
 
@@ -138,34 +135,32 @@ li.contacto__icon{
   left: 0.5rem;
 }
 
-.progress{
+.progress {
   background-color: #010d59;
   height: 1.2rem;
-  width: 8rem;  
+  width: 8rem;
   border-radius: 1rem;
   overflow: hidden;
   margin-right: 10%;
-
 }
-.progress-bar{  
+.progress-bar {
   background-color: #f19d20;
   height: inherit;
   width: 30%;
   border-radius: 1rem;
-  padding-left: .5rem;
-  
+  padding-left: 0.5rem;
 }
 
-.experienciaLaboral{
+.experienciaLaboral {
   border-left: 0.2rem solid #1e005c;
   position: relative;
   padding-left: 1rem;
 }
 
-.experienciaLaboral__titulo{
+.experienciaLaboral__titulo {
   top: -1rem;
   left: 0.7rem;
-  position: relative;  
+  position: relative;
   background-color: #e2ddf0;
   border-radius: 1rem;
   width: 15rem;
@@ -174,7 +169,7 @@ li.contacto__icon{
   padding-left: 0.8rem;
 }
 
-.experienciaLaboral__titulo::before{
+.experienciaLaboral__titulo::before {
   content: "";
   width: 2rem;
   height: 0.2rem;
@@ -185,15 +180,14 @@ li.contacto__icon{
   z-index: -1;
 }
 
-.experienciaLaboral__subtitulo{
+.experienciaLaboral__subtitulo {
   display: flex;
   align-items: center;
   margin-bottom: 0.8rem;
-  
 }
 
-.experienciaLaboral__subtitulo::before{
-  content:"";
+.experienciaLaboral__subtitulo::before {
+  content: "";
   width: 0.8rem;
   height: 0.8rem;
   background-color: #1e005c;
@@ -202,38 +196,39 @@ li.contacto__icon{
   left: -0.5rem;
 }
 
-.experienciaLaboral__elementos{
+.experienciaLaboral__elementos {
   margin-bottom: 2rem;
 }
-.experienciaLaboral__elementos section{
+.experienciaLaboral__elementos section {
   margin-left: 1.55rem;
 }
 
-form.form-encabezado:first-child{
+form.form-encabezado:first-child {
   padding-top: 2rem;
 }
 
-.form-encabezado{
-  padding: 0 2rem 1.5rem 2rem;
+.form-encabezado {
+  padding: 0 2rem 0 2rem;
+  border-top: 1px solid gray;
+  padding-top: 2.5rem;
 }
 
-.form-encabezado__elementos{
+.form-encabezado__elementos {
   display: flex;
   gap: 0.2rem;
   margin-bottom: 0.9rem;
   flex-direction: column;
 }
-.form-encabezado__elementos input{
-  background-color: #f3f4f6;;
+.form-encabezado__elementos input {
+  background-color: #f3f4f6;
   border: 0.1rem solid transparent;
   border-radius: 0.5rem;
   padding: 0.7rem;
 }
 
-.form-encabezado_label{
+.form-encabezado_label {
   font-weight: bold;
 }
-
 
 .formulario-seccion {
   overflow: hidden;
@@ -249,19 +244,18 @@ form.form-encabezado:first-child{
   margin-top: 10px;
 }
 
-.cv__derecho{
+.cv__derecho {
   background-image: url("img/output-onlinepngtools.png");
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
-} 
+}
 
 /* .cv__derecho{
   z-index: -1;
   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
   background-image: url("https://media-public.canva.com/MADQ5Phk4sY/1/screen.jpg");
 } */
-
 
 .custom-file-input {
   display: inline-block;
@@ -288,19 +282,84 @@ form.form-encabezado:first-child{
 .custom-file-input label:hover {
   background-color: #1e015d;
 }
-.form-encabezado__fullnombreYprofesion{
+.form-encabezado__fullnombreYprofesion {
   display: flex;
   gap: 2rem;
 }
-section.form-encabezado__elementos:nth-child(1){
+section.form-encabezado__elementos:nth-child(1) {
   flex-basis: 70%;
 }
-section.form-encabezado__elementos:nth-child(2){
+section.form-encabezado__elementos:nth-child(2) {
   flex-basis: 30%;
 }
 
-.cv__encabezado h1,h2,span{
-  text-transform:capitalize;
+.cv__encabezado h1,
+h2,
+span {
+  text-transform: capitalize;
 }
 
+.button {
+  border: 1px solid #ef233ba9;
+  width: 1.2rem;
+  height: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2rem;
+  padding: 0.65rem;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.199);
+  transition: background-color ease-in-out 0.2s;
+}
+.button:hover {
+  background-color: #ff8997;
+}
 
+.pila {
+  display: flex;
+
+  border-radius: 0.3rem;
+  gap: 0.7rem;
+}
+.pila__input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.form-input {
+  background-color: #f3f4f6;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+  padding: 0.45rem;
+}
+.pila__elemento {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.pila li {
+  margin-top: 0.5rem;
+}
+.pila__input div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.pila__input input[type="range"] {
+  width: 85%;
+}
+.pila__input input[type="range"]:hover {
+  width: 100%;
+}
+
+.eliminar-border {
+  border: none;
+  padding-top: 0;
+}
+
+.PilaForm__textoYboton {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}

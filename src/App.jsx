@@ -2,23 +2,15 @@ import { useState } from "react";
 import "./style.css";
 import { Encebezado } from "./componentes/Encebezado.jsx";
 import { Formulario } from "./componentes/Formulario.jsx";
-import {Contacto } from "./componentes/Contacto.jsx";
+import { Contacto } from "./componentes/Contacto.jsx";
+import Habilidades from "./componentes/Habilidades.jsx";
 import {
   handle_fullname_change,
   handle_profesion_change,
   handle_portadaURL_change,
   handle_telefono_change,
-  handle_correo_change
+  handle_correo_change,
 } from "./utils";
-
-
-const FormularioSeccion = ({ isOpen, children }) => {
-  return (
-    <div className={`formulario-seccion ${isOpen ? 'open' : ''}`}>
-      {children}      
-    </div>
-  );
-};
 
 function App() {
   const [fullnombre, setfullnombre] = useState("Leonardo C.");
@@ -30,7 +22,9 @@ function App() {
   const [telefono, setTelefono] = useState("+5731234567");
   const [correo, setCorreo] = useState("Leoca34@gmail.com");
 
-  const [formularioVisible, setFormularioVisible] = useState(true);
+  const [lenguajeList, setLenguajeList] = useState([
+    { nombre: "Python", rango: 36 },
+  ]);
 
   return (
     <>
@@ -41,6 +35,8 @@ function App() {
             profesion={profesion}
             telefono={telefono}
             correo={correo}
+            lenguajeList={lenguajeList}
+            setLenguajeList={setLenguajeList}
             handle_fullname_change={(e) =>
               handle_fullname_change(e, setfullnombre)
             }
@@ -53,18 +49,8 @@ function App() {
             handle_telefono_change={(e) =>
               handle_telefono_change(e, setTelefono)
             }
-            handle_correo_change={(e) =>
-              handle_correo_change(e, setCorreo)
-            }
+            handle_correo_change={(e) => handle_correo_change(e, setCorreo)}
           />
-
-          <button onClick={() => setFormularioVisible(!formularioVisible)}> {formularioVisible ? 'Cerrar' : 'Abrir'} Formulario</button>          
-          <FormularioSeccion isOpen={formularioVisible}>            
-            <form className="form-encabezado">
-              <input type="text" placeholder="prueba"/>
-            </form>
-         </FormularioSeccion>
-
         </aside>
 
         <aside className="cv">
@@ -75,44 +61,8 @@ function App() {
           />
 
           <div className="cv__izquierdo">
-            <Contacto
-              telefono={telefono}
-              correo={correo}
-            />
-            <section className="contacto__contenedor">
-              <h3 className="contacto__titulo">HABILIDADES</h3>
-              <h4 className="contacto__subtitulo">Lenguajes de Programación</h4>
-              <ul className="contacto_lista">
-                <li>
-                  <span>Python</span>
-                  <div className="progress">
-                    <div className="progress-bar">35%</div>
-                  </div>
-                </li>
-                <li>
-                  <span>C++</span>
-                  <div className="progress">
-                    <div className="progress-bar">35%</div>
-                  </div>
-                </li>
-              </ul>
-
-              <h4 className="contacto__subtitulo">Otros programas</h4>
-              <ul className="contacto_lista">
-                <li>
-                  <span>DOM</span>
-                  <div className="progress">
-                    <div className="progress-bar">35%</div>
-                  </div>
-                </li>
-                <li>
-                  <span>Excel</span>
-                  <div className="progress">
-                    <div className="progress-bar">35%</div>
-                  </div>
-                </li>
-              </ul>
-            </section>
+            <Contacto telefono={telefono} correo={correo} />
+            <Habilidades lenguajeList={lenguajeList} />
 
             <section className="contacto__contenedor">
               <h3 className="contacto__titulo">LANGUAGE</h3>
