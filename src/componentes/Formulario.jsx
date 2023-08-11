@@ -52,16 +52,13 @@ function PilaForm({ lenguajeList, setLenguajeList }) {
 }
 
 export function Formulario({
-  fullnombre,
-  profesion,
-  telefono,
-  correo,
+  datosPersonales,
   lenguajeList,
-  handle_fullname_change,
-  handle_profesion_change,
-  handle_portadaURL_change,
-  handle_telefono_change,
-  handle_correo_change,
+  modificador_de_fullname,
+  modificador_de_profesion,
+  modificador_de_portadaURL,
+  modificador_de_telefono,
+  modificador_correo_change,
   setLenguajeList,
 }) {
   const [addLenguaje, setAddLenguaje] = useState({
@@ -102,8 +99,8 @@ export function Formulario({
             <label className="form-encabezado_label">Nombre y Apellido</label>
             <input
               type="text"
-              onChange={handle_fullname_change}
-              placeholder={fullnombre}
+              onChange={modificador_de_fullname}
+              placeholder={datosPersonales.fullnombre}
             />
           </section>
 
@@ -111,8 +108,8 @@ export function Formulario({
             <label className="form-encabezado_label">Profesión</label>
             <input
               type="text"
-              onChange={handle_profesion_change}
-              placeholder={profesion}
+              onChange={modificador_de_profesion}
+              placeholder={datosPersonales.profesion}
             />
           </section>
         </div>
@@ -124,8 +121,8 @@ export function Formulario({
             <label className="form-encabezado_label">Telefono</label>
             <input
               type="text"
-              onChange={handle_telefono_change}
-              placeholder={telefono}
+              onChange={modificador_de_telefono}
+              placeholder={datosPersonales.telefono}
             />
           </section>
 
@@ -133,8 +130,8 @@ export function Formulario({
             <label className="form-encabezado_label">Email</label>
             <input
               type="text"
-              onChange={handle_correo_change}
-              placeholder={correo}
+              onChange={modificador_correo_change}
+              placeholder={datosPersonales.correo}
             />
           </section>
         </div>
@@ -145,7 +142,7 @@ export function Formulario({
           <div className="custom-file-input">
             <input
               type="file"
-              onChange={handle_portadaURL_change}
+              onChange={modificador_de_portadaURL}
               id="fileInput"
               style={{ display: "none" }}
             />

@@ -4,18 +4,12 @@ import { Encebezado } from "./componentes/Encebezado.jsx";
 import { Formulario } from "./componentes/Formulario.jsx";
 import { Contacto } from "./componentes/Contacto.jsx";
 import Habilidades from "./componentes/Habilidades.jsx";
-import {
-  handle_fullname_change,
-  handle_profesion_change,
-  handle_portadaURL_change,
-  handle_telefono_change,
-  handle_correo_change,
-} from "./utils";
+import { handle_change, handle_portadaURL_change } from "./utils";
 
 function App() {
-  const [fullnombre, setfullnombre] = useState("Leonardo C.");
-  const [profesion, setprofesion] = useState("Programador");
-  const [portadaURL, setportadaURL] = useState(
+  const [fullnombre, setFullName] = useState("Leonardo C.");
+  const [profesion, setProfesion] = useState("Programador");
+  const [portadaURL, setPortadaURL] = useState(
     "img/Carpincho esperando frente a un rio.png"
   );
 
@@ -31,25 +25,19 @@ function App() {
       <main>
         <aside className="formulario">
           <Formulario
-            fullnombre={fullnombre}
-            profesion={profesion}
-            telefono={telefono}
-            correo={correo}
+            datosPersonales={{
+              fullnombre,
+              profesion,
+              telefono,
+              correo,
+            }}
             lenguajeList={lenguajeList}
             setLenguajeList={setLenguajeList}
-            handle_fullname_change={(e) =>
-              handle_fullname_change(e, setfullnombre)
-            }
-            handle_profesion_change={(e) =>
-              handle_profesion_change(e, setprofesion)
-            }
-            handle_portadaURL_change={(e) =>
-              handle_portadaURL_change(e, setportadaURL)
-            }
-            handle_telefono_change={(e) =>
-              handle_telefono_change(e, setTelefono)
-            }
-            handle_correo_change={(e) => handle_correo_change(e, setCorreo)}
+            modificador_de_fullname={handle_change(setFullName)}
+            modificador_de_profesion={handle_change(setProfesion)}
+            modificador_de_portadaURL={handle_portadaURL_change(setPortadaURL)}
+            modificador_de_telefono={handle_change(setTelefono)}
+            modificador_correo_change={handle_change(setCorreo)}
           />
         </aside>
 

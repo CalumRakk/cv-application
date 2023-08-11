@@ -1,14 +1,9 @@
 //
 
-export const handle_fullname_change = (e, setFullnombre) => {
-  setFullnombre(e.target.value);
+export const handle_change = (funcionModificadora) => (e) => {
+  funcionModificadora(e.target.value);
 };
-
-export const handle_profesion_change = (e, setprofesion) => {
-  setprofesion(e.target.value);
-};
-
-export const handle_portadaURL_change = (e, setportadaURL) => {
+export const handle_portadaURL_change = (funcionModificadora) => (e) => {
   const selectedFile = e.target.files[0];
   if (selectedFile) {
     const mime = selectedFile.type.split("/")[0];
@@ -17,14 +12,6 @@ export const handle_portadaURL_change = (e, setportadaURL) => {
       return;
     }
     const fondoURL = URL.createObjectURL(selectedFile);
-    setportadaURL(fondoURL);
+    funcionModificadora(fondoURL);
   }
-};
-
-export const handle_telefono_change = (e, setTelefono) => {
-  setTelefono(e.target.value);
-};
-
-export const handle_correo_change = (e, setCorreo) => {
-  setCorreo(e.target.value);
 };
