@@ -1,18 +1,20 @@
 //
+function test(e, lenguajeList, setLenguajeList) {
+  const { name, value } = e.target;
+  console.log(lenguajeList);
 
-// const updateFieldChanged = (index, lenguajeList, setLenguajeList) => (e) => {
-//   const { name, value } = e.target;
-//   let newArr = [...lenguajeList];
-//   newArr[index].nombre = value;
-//   setLenguajeList(newArr);
+  const newLenguaje = {
+    [name]: value,
+  };
 
-//   // console.log(newArr);
-//   // console.log(newArr[index].nombre);
-//   // console.log(e.target.value);
-// };
+  const updateLenguaje = lenguajeList.map((lenguaje) =>
+    lenguaje.nombre === newLenguaje.name ? newLenguaje : lenguaje
+  );
+  setLenguajeList(updateLenguaje);
+}
 
 function PilaForm({ lenguajeList, setLenguajeList }) {
-  return lenguajeList.map((lenguaje, index) => {
+  return lenguajeList.map((lenguaje) => {
     return (
       <li key={lenguaje.nombre}>
         <section className="pila__elemento">
@@ -21,6 +23,9 @@ function PilaForm({ lenguajeList, setLenguajeList }) {
               type="text"
               className="form-input"
               placeholder={lenguaje.nombre}
+              name={lenguaje.nombre}
+              value={lenguaje.nombre}
+              onChange={(e) => test(e, lenguajeList, setLenguajeList)}
             />
             <button type="button" className="button">
               <img width="20px" height="20px" src="src\assets\close.svg" />
