@@ -2,9 +2,9 @@
 function PilaCv({ lenguajeList }) {
   return (
     <ul className="contacto_lista">
-      {lenguajeList.map((lenguaje, index) => {
+      {lenguajeList.map((lenguaje) => {
         return (
-          <li key={index}>
+          <li key={lenguaje.id}>
             <span>{lenguaje.nombre}</span>
             <div className="progress">
               <div

@@ -23,7 +23,7 @@ function App() {
   const [correo, setCorreo] = useState("Leoca34@gmail.com");
 
   const [lenguajeList, setLenguajeList] = useState([
-    { nombre: "Python", rango: 36 },
+    { id: window.crypto.randomUUID(), nombre: "Python", rango: 36 },
   ]);
 
   return (

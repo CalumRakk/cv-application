@@ -5,21 +5,23 @@ function PilaForm({ lenguajeList, setLenguajeList }) {
   const hardle_Change = (index) => (e) => {
     const { name, value } = e.target;
 
-    const updateLenguaje = lenguajeList.map((lenguaje, i) =>
-      index === i ? { ...lenguaje, [name]: value } : lenguaje
+    const updateLenguaje = lenguajeList.map((lenguaje) =>
+      index === lenguaje.id ? { ...lenguaje, [name]: value } : lenguaje
     );
     setLenguajeList(updateLenguaje);
   };
 
   const removeLenguajeList = (index) => (e) => {
-    const updateLenguaje = [...lenguajeList];
-    updateLenguaje.pop(index);
-    setLenguajeList(updateLenguaje);
+    setLenguajeList(
+      lenguajeList.filter((lenguaje) => {
+        return index !== lenguaje.id;
+      })
+    );
   };
 
-  return lenguajeList.map((lenguaje, index) => {
+  return lenguajeList.map((lenguaje) => {
     return (
-      <li key={index}>
+      <li key={lenguaje.id}>
         <section className="pila__elemento">
           <div className="PilaForm__textoYboton">
             <input
@@ -28,17 +30,21 @@ function PilaForm({ lenguajeList, setLenguajeList }) {
               placeholder={lenguaje.nombre}
               name="nombre"
               value={lenguaje.nombre}
-              onChange={hardle_Change(index)}
+              onChange={hardle_Change(lenguaje.id)}
             />
             <button
               type="button"
               className="button_rojo"
-              onClick={removeLenguajeList(index)}
+              onClick={removeLenguajeList(lenguaje.id)}
             >
               <img width="20px" height="20px" src="src\assets\close.svg" />
             </button>
           </div>
-          <input type="range" name="rango" onChange={hardle_Change(index)} />
+          <input
+            type="range"
+            name="rango"
+            onChange={hardle_Change(lenguaje.id)}
+          />
         </section>
       </li>
     );
@@ -67,15 +73,13 @@ export function Formulario({
     setAddLenguaje({ ...addLenguaje, rango: e.target.value });
   };
   const handle_input_change = (e) => {
-    setAddLenguaje({ ...addLenguaje, nombre: e.target.value });
-
-    // console.log(lenguajeList.length);
-    // if (lenguajeList.length == 1 && addLenguaje.nombre === "Python") {
-    //   setAddLenguaje({ ...addLenguaje, nombre: e.target.value });
-    // }
+    setAddLenguaje({
+      ...addLenguaje,
+      nombre: e.target.value,
+      id: window.crypto.randomUUID(),
+    });
   };
   const handle_addLenguaje = (e) => {
-    console.log(addLenguaje.nombre);
     const test = (element) => element.nombre === addLenguaje.nombre;
     const variable = lenguajeList.some(test);
     if (variable) {
@@ -90,7 +94,6 @@ export function Formulario({
   const isDisabled = () => lenguajeList.length >= 5;
   const [notificacion, setNotificacion] = useState(false);
 
-  console.log(notificacion);
   return (
     <>
       <form className="form-encabezado">
