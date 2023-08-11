@@ -1,31 +1,27 @@
 //
-function test(e, lenguajeList, setLenguajeList) {
-  const { name, value } = e.target;
-  console.log(lenguajeList);
-
-  const newLenguaje = {
-    [name]: value,
-  };
-
-  const updateLenguaje = lenguajeList.map((lenguaje) =>
-    lenguaje.nombre === newLenguaje.name ? newLenguaje : lenguaje
-  );
-  setLenguajeList(updateLenguaje);
-}
 
 function PilaForm({ lenguajeList, setLenguajeList }) {
-  return lenguajeList.map((lenguaje) => {
+  const hardle_Change = (index) => (e) => {
+    const { name, value } = e.target;
+
+    const updateLenguaje = lenguajeList.map((lenguaje, i) =>
+      index === i ? { ...lenguaje, [name]: value } : lenguaje
+    );
+    setLenguajeList(updateLenguaje);
+  };
+
+  return lenguajeList.map((lenguaje, index) => {
     return (
-      <li key={lenguaje.nombre}>
+      <li key={index}>
         <section className="pila__elemento">
           <div className="PilaForm__textoYboton">
             <input
               type="text"
               className="form-input"
               placeholder={lenguaje.nombre}
-              name={lenguaje.nombre}
+              name="nombre"
               value={lenguaje.nombre}
-              onChange={(e) => test(e, lenguajeList, setLenguajeList)}
+              onChange={hardle_Change(index)}
             />
             <button type="button" className="button">
               <img width="20px" height="20px" src="src\assets\close.svg" />
