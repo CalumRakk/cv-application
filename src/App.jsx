@@ -24,7 +24,6 @@ function App() {
 
   const [lenguajeList, setLenguajeList] = useState([
     { nombre: "Python", rango: 36 },
-    { nombre: "C++", rango: 40 },
   ]);
 
   return (
