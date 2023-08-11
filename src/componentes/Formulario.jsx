@@ -51,16 +51,7 @@ function PilaForm({ lenguajeList, setLenguajeList }) {
   });
 }
 
-export function Formulario({
-  datosPersonales,
-  lenguajeList,
-  modificador_de_fullname,
-  modificador_de_profesion,
-  modificador_de_portadaURL,
-  modificador_de_telefono,
-  modificador_correo_change,
-  setLenguajeList,
-}) {
+export function Formulario({ datosPersonales, lenguajeList, setLenguajeList }) {
   const [addLenguaje, setAddLenguaje] = useState({
     nombre: "Python",
     rango: 36,
@@ -99,7 +90,7 @@ export function Formulario({
             <label className="form-encabezado_label">Nombre y Apellido</label>
             <input
               type="text"
-              onChange={modificador_de_fullname}
+              onChange={datosPersonales.set_fullnombre}
               placeholder={datosPersonales.fullnombre}
             />
           </section>
@@ -108,7 +99,7 @@ export function Formulario({
             <label className="form-encabezado_label">Profesión</label>
             <input
               type="text"
-              onChange={modificador_de_profesion}
+              onChange={datosPersonales.set_profesion}
               placeholder={datosPersonales.profesion}
             />
           </section>
@@ -121,7 +112,7 @@ export function Formulario({
             <label className="form-encabezado_label">Telefono</label>
             <input
               type="text"
-              onChange={modificador_de_telefono}
+              onChange={datosPersonales.set_telefono}
               placeholder={datosPersonales.telefono}
             />
           </section>
@@ -130,7 +121,7 @@ export function Formulario({
             <label className="form-encabezado_label">Email</label>
             <input
               type="text"
-              onChange={modificador_correo_change}
+              onChange={datosPersonales.set_correo}
               placeholder={datosPersonales.correo}
             />
           </section>
@@ -142,7 +133,7 @@ export function Formulario({
           <div className="custom-file-input">
             <input
               type="file"
-              onChange={modificador_de_portadaURL}
+              onChange={datosPersonales.set_portadaURL}
               id="fileInput"
               style={{ display: "none" }}
             />

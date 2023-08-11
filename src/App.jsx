@@ -9,35 +9,36 @@ import { handle_change, handle_portadaURL_change } from "./utils";
 function App() {
   const [fullnombre, setFullName] = useState("Leonardo C.");
   const [profesion, setProfesion] = useState("Programador");
+  const [telefono, setTelefono] = useState("+5731234567");
+  const [correo, setCorreo] = useState("Leoca34@gmail.com");
   const [portadaURL, setPortadaURL] = useState(
     "img/Carpincho esperando frente a un rio.png"
   );
-
-  const [telefono, setTelefono] = useState("+5731234567");
-  const [correo, setCorreo] = useState("Leoca34@gmail.com");
 
   const [lenguajeList, setLenguajeList] = useState([
     { id: window.crypto.randomUUID(), nombre: "Python", rango: 36 },
   ]);
 
+  const datosPersonales = {
+    fullnombre,
+    profesion,
+    telefono,
+    correo,
+    portadaURL,
+    set_fullnombre: handle_change(setFullName),
+    set_profesion: handle_change(setProfesion),
+    set_telefono: handle_change(setTelefono),
+    set_correo: handle_change(setCorreo),
+    set_portadaURL: handle_portadaURL_change(setPortadaURL),
+  };
   return (
     <>
       <main>
         <aside className="formulario">
           <Formulario
-            datosPersonales={{
-              fullnombre,
-              profesion,
-              telefono,
-              correo,
-            }}
+            datosPersonales={datosPersonales}
             lenguajeList={lenguajeList}
             setLenguajeList={setLenguajeList}
-            modificador_de_fullname={handle_change(setFullName)}
-            modificador_de_profesion={handle_change(setProfesion)}
-            modificador_de_portadaURL={handle_portadaURL_change(setPortadaURL)}
-            modificador_de_telefono={handle_change(setTelefono)}
-            modificador_correo_change={handle_change(setCorreo)}
           />
         </aside>
 
