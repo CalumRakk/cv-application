@@ -31,6 +31,7 @@ function App() {
     set_correo: handle_change(setCorreo),
     set_portadaURL: handle_portadaURL_change(setPortadaURL),
   };
+
   return (
     <>
       <main>

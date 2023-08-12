@@ -15,3 +15,29 @@ export const handle_portadaURL_change = (funcionModificadora) => (e) => {
     funcionModificadora(fondoURL);
   }
 };
+
+export const agrega_elemento_a_LenguajeList =
+  (lenguajeList, SetLenguajeList, nombre_input, rango_input, setNotificacion) =>
+  () => {
+    const comprueba_si_nombre_input_esta_en_LenguajeList = (element) =>
+      element.nombre.toLowerCase() === nombre_input.toLowerCase();
+    const isTrue = lenguajeList.some(
+      comprueba_si_nombre_input_esta_en_LenguajeList
+    );
+
+    if (isTrue === false) {
+      SetLenguajeList([
+        ...lenguajeList,
+        {
+          nombre: nombre_input,
+          range: rango_input,
+          id: window.crypto.randomUUID(),
+        },
+      ]);
+    } else {
+      setNotificacion(true);
+      setTimeout(() => {
+        setNotificacion(false);
+      }, 1000);
+    }
+  };

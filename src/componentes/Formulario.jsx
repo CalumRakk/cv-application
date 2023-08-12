@@ -1,5 +1,6 @@
 //
 import { useState } from "react";
+import { handle_change, agrega_elemento_a_LenguajeList } from "../utils";
 
 function PilaForm({ lenguajeList, setLenguajeList }) {
   const hardle_Change = (index) => (e) => {
@@ -52,33 +53,11 @@ function PilaForm({ lenguajeList, setLenguajeList }) {
 }
 
 export function Formulario({ datosPersonales, lenguajeList, setLenguajeList }) {
-  const [addLenguaje, setAddLenguaje] = useState({
-    nombre: "Python",
-    rango: 36,
-  });
+  const { nombre, rango } = lenguajeList[0];
 
-  const handle_rango_change = (e) => {
-    setAddLenguaje({ ...addLenguaje, rango: e.target.value });
-  };
-  const handle_input_change = (e) => {
-    setAddLenguaje({
-      ...addLenguaje,
-      nombre: e.target.value,
-      id: window.crypto.randomUUID(),
-    });
-  };
-  const handle_addLenguaje = (e) => {
-    const test = (element) => element.nombre === addLenguaje.nombre;
-    const variable = lenguajeList.some(test);
-    if (variable) {
-      setNotificacion(true);
-      setTimeout(() => {
-        setNotificacion(false);
-      }, 1000);
-    } else {
-      setLenguajeList([...lenguajeList, addLenguaje]);
-    }
-  };
+  const [nombre_de_lenguaje, setNombre_de_lenguaje] = useState(nombre);
+  const [rango_de_lenguaje, setRango_de_lenguaje] = useState(rango);
+
   const isDisabled = () => lenguajeList.length >= 5;
   const [notificacion, setNotificacion] = useState(false);
 
@@ -153,18 +132,23 @@ export function Formulario({ datosPersonales, lenguajeList, setLenguajeList }) {
                 <div>
                   <input
                     type="text"
-                    name="lenguaje"
+                    name="nombre"
                     className="form-input"
-                    placeholder={addLenguaje.nombre}
-                    onChange={handle_input_change}
-                    value={addLenguaje.nombre}
+                    placeholder={nombre_de_lenguaje}
+                    onChange={handle_change(setNombre_de_lenguaje)}
                   />
                   <button
                     type="button"
                     className={`button_verde ${
                       isDisabled() ? "button_disabled" : ""
                     } ${notificacion ? "button_disabled" : ""} `}
-                    onClick={handle_addLenguaje}
+                    onClick={agrega_elemento_a_LenguajeList(
+                      lenguajeList,
+                      setLenguajeList,
+                      nombre_de_lenguaje,
+                      rango_de_lenguaje,
+                      setNotificacion
+                    )}
                     disabled={isDisabled()}
                   >
                     <img width="15px" height="15px" src="src\assets\add.svg" />
@@ -172,8 +156,9 @@ export function Formulario({ datosPersonales, lenguajeList, setLenguajeList }) {
                 </div>
                 <input
                   type="range"
-                  value={addLenguaje.rango}
-                  onChange={handle_rango_change}
+                  name="rango"
+                  value={rango_de_lenguaje}
+                  onChange={handle_change(setRango_de_lenguaje)}
                 />
               </section>
 
