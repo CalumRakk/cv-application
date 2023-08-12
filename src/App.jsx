@@ -18,7 +18,8 @@ function App() {
   const [lenguajeList, setLenguajeList] = useState([
     { id: window.crypto.randomUUID(), nombre: "Python", rango: 36 },
   ]);
-  const [programasList, setProgramasList] = useState([
+
+  const [programaList, setProgramaList] = useState([
     { id: window.crypto.randomUUID(), nombre: "Excel", rango: 36 },
     { id: window.crypto.randomUUID(), nombre: "PowerPoint", rango: 45 },
   ]);
@@ -44,8 +45,8 @@ function App() {
             datosPersonales={datosPersonales}
             lenguajeList={lenguajeList}
             setLenguajeList={setLenguajeList}
-            programasList={programasList}
-            setProgramasList={setProgramasList}
+            programaList={programaList}
+            setProgramaList={setProgramaList}
           />
         </aside>
 
@@ -58,7 +59,10 @@ function App() {
 
           <div className="cv__izquierdo">
             <Contacto telefono={telefono} correo={correo} />
-            <Habilidades lenguajeList={lenguajeList} />
+            <Habilidades
+              lenguajeList={lenguajeList}
+              programaList={programaList}
+            />
 
             <section className="contacto__contenedor">
               <h3 className="contacto__titulo">LANGUAGE</h3>

@@ -21,7 +21,7 @@ function PilaCv({ lenguajeList }) {
   );
 }
 
-export default function Habilidades({ lenguajeList }) {
+export default function Habilidades({ lenguajeList, programaList }) {
   return (
     <section className="contacto__contenedor">
       <h3 className="contacto__titulo">HABILIDADES</h3>
@@ -29,20 +29,7 @@ export default function Habilidades({ lenguajeList }) {
       <PilaCv lenguajeList={lenguajeList} />
 
       <h4 className="contacto__subtitulo">Otros programas</h4>
-      <ul className="contacto_lista">
-        <li>
-          <span>DOM</span>
-          <div className="progress">
-            <div className="progress-bar">35%</div>
-          </div>
-        </li>
-        <li>
-          <span>Excel</span>
-          <div className="progress">
-            <div className="progress-bar">35%</div>
-          </div>
-        </li>
-      </ul>
+      <PilaCv lenguajeList={programaList} />
     </section>
   );
 }

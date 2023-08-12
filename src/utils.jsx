@@ -26,6 +26,7 @@ export const agrega_elemento_a_LenguajeList =
     );
 
     if (isTrue === false) {
+      console.log("isTrue");
       SetLenguajeList([
         ...lenguajeList,
         {
@@ -35,6 +36,7 @@ export const agrega_elemento_a_LenguajeList =
         },
       ]);
     } else {
+      console.log("false");
       setNotificacion(true);
       setTimeout(() => {
         setNotificacion(false);

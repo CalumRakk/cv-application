@@ -7,8 +7,8 @@ export function Formulario({
   datosPersonales,
   lenguajeList,
   setLenguajeList,
-  programasList,
-  setProgramasList,
+  programaList,
+  setProgramaList,
 }) {
   const { nombre, rango } = { ...lenguajeList[0] };
 
@@ -142,8 +142,8 @@ export function Formulario({
                   type="text"
                   name="nombre"
                   className="form-input"
-                  placeholder={nombre_de_lenguaje}
-                  onChange={handle_change(setNombre_de_lenguaje)}
+                  placeholder={nombre_de_programa}
+                  onChange={handle_change(setNombre_de_programa)}
                 />
                 <button
                   type="button"
@@ -151,10 +151,10 @@ export function Formulario({
                     isDisabled() ? "button_disabled" : ""
                   } ${notificacion ? "button_disabled" : ""} `}
                   onClick={agrega_elemento_a_LenguajeList(
-                    lenguajeList,
-                    setLenguajeList,
-                    nombre_de_lenguaje,
-                    rango_de_lenguaje,
+                    programaList,
+                    setProgramaList,
+                    nombre_de_programa,
+                    rango_de_programa,
                     setNotificacion
                   )}
                   disabled={isDisabled()}
@@ -165,14 +165,14 @@ export function Formulario({
               <input
                 type="range"
                 name="rango"
-                value={rango_de_lenguaje}
-                onChange={handle_change(setRango_de_lenguaje)}
+                value={rango_de_programa}
+                onChange={handle_change(setRango_de_programa)}
               />
             </section>
             <ul>
               <PilaForm
-                lenguajeList={lenguajeList}
-                setLenguajeList={setLenguajeList}
+                lenguajeList={programaList}
+                setLenguajeList={setProgramaList}
               />
             </ul>
           </div>
