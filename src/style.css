@@ -22,7 +22,7 @@ main {
 
 .formulario {
   background-color: #3e23751e;
-  flex-basis: 36%;
+  flex-basis: 35%;
 }
 
 .cv {
@@ -208,7 +208,7 @@ form.form-encabezado:first-child {
 }
 
 .form-encabezado {
-  padding: 0 2rem 0 2rem;
+  padding: 0 2rem 0 1rem;
   border-top: 1px solid gray;
   padding-top: 2.5rem;
 }

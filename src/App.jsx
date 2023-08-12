@@ -18,6 +18,10 @@ function App() {
   const [lenguajeList, setLenguajeList] = useState([
     { id: window.crypto.randomUUID(), nombre: "Python", rango: 36 },
   ]);
+  const [programasList, setProgramasList] = useState([
+    { id: window.crypto.randomUUID(), nombre: "Excel", rango: 36 },
+    { id: window.crypto.randomUUID(), nombre: "PowerPoint", rango: 45 },
+  ]);
 
   const datosPersonales = {
     fullnombre,
@@ -40,6 +44,8 @@ function App() {
             datosPersonales={datosPersonales}
             lenguajeList={lenguajeList}
             setLenguajeList={setLenguajeList}
+            programasList={programasList}
+            setProgramasList={setProgramasList}
           />
         </aside>
 
