@@ -22,7 +22,7 @@ main {
 
 .formulario {
   background-color: #3e23751e;
-  flex-basis: 35%;
+  flex-basis: 36%;
 }
 
 .cv {
@@ -30,7 +30,7 @@ main {
   padding: 0.8rem;
   position: relative;
   overflow: hidden;
-  flex-basis: 65%;
+  flex-basis: 64%;
 }
 
 .cv__encabezado {

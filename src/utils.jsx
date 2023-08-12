@@ -30,7 +30,7 @@ export const agrega_elemento_a_LenguajeList =
         ...lenguajeList,
         {
           nombre: nombre_input,
-          range: rango_input,
+          rango: rango_input,
           id: window.crypto.randomUUID(),
         },
       ]);
