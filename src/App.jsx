@@ -23,6 +23,11 @@ function App() {
     { id: window.crypto.randomUUID(), nombre: "PowerPoint", rango: 45 },
   ]);
 
+  const [idiomaList, setIdiomaList] = useState([
+    { id: window.crypto.randomUUID(), nombre: "Ingles", rango: 100 },
+    { id: window.crypto.randomUUID(), nombre: "Chino", rango: 75 },
+  ]);
+
   const datosPersonales = {
     fullnombre,
     profesion,
@@ -46,6 +51,8 @@ function App() {
             setLenguajeList={setLenguajeList}
             programaList={programaList}
             setProgramaList={setProgramaList}
+            idiomaList={idiomaList}
+            setIdiomaList={setIdiomaList}
           />
         </aside>
 
@@ -58,6 +65,7 @@ function App() {
           <CvIzquierdo
             lenguajeList={lenguajeList}
             programaList={programaList}
+            idiomaList={idiomaList}
           />
 
           <div className="cv__derecho">

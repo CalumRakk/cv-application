@@ -1,7 +1,7 @@
 //
 import { Pila } from "./CvIzquierdo.Pila.jsx";
 import { Contacto } from "./CvIzquierdo.Contacto.jsx";
-export function CvIzquierdo({ lenguajeList, programaList }) {
+export function CvIzquierdo({ lenguajeList, programaList, idiomaList }) {
   return (
     <>
       <div className="cv__izquierdo">
@@ -15,21 +15,8 @@ export function CvIzquierdo({ lenguajeList, programaList }) {
         </section>
 
         <section className="contacto__contenedor">
-          <h3 className="contacto__titulo">LANGUAGE</h3>
-          <ul className="contacto_lista">
-            <li>
-              <span>Ingles</span>
-              <div className="progress">
-                <div className="progress-bar">35%</div>
-              </div>
-            </li>
-            <li>
-              <span>Arabe</span>
-              <div className="progress">
-                <div className="progress-bar">35%</div>
-              </div>
-            </li>
-          </ul>
+          <h3 className="contacto__titulo">Idioma</h3>
+          <Pila lenguajeList={idiomaList} />
         </section>
 
         <section className="contacto__contenedor">

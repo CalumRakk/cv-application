@@ -9,6 +9,8 @@ export function Formulario({
   setLenguajeList,
   programaList,
   setProgramaList,
+  idiomaList,
+  setIdiomaList,
 }) {
   const { nombre, rango } = { ...lenguajeList[0] };
 
@@ -17,6 +19,9 @@ export function Formulario({
 
   const [nombre_de_programa, setNombre_de_programa] = useState("Excel");
   const [rango_de_programa, setRango_de_programa] = useState(30);
+
+  const [nombre_de_idioma, setNombre_de_idioma] = useState("Ingles");
+  const [rango_de_idioma, setRango_de_idioma] = useState(100);
 
   const isDisabled = () => lenguajeList.length >= 5;
   const [notificacion, setNotificacion] = useState(false);
@@ -171,6 +176,53 @@ export function Formulario({
               <PilaForm
                 lenguajeList={programaList}
                 setLenguajeList={setProgramaList}
+              />
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="form-encabezado">
+        <div className="form-encabezado__fullnombreYprofesion">
+          <div className="pila">
+            <section className="pila__input">
+              <label className="form-encabezado_label">Lenguaje</label>
+              <div>
+                <input
+                  type="text"
+                  name="nombre"
+                  className="form-input"
+                  placeholder={nombre_de_idioma}
+                  onChange={handle_change(setNombre_de_idioma)}
+                />
+                <button
+                  type="button"
+                  className={`button_verde ${
+                    isDisabled() ? "button_disabled" : ""
+                  } ${notificacion ? "button_disabled" : ""} `}
+                  onClick={agrega_elemento_a_LenguajeList(
+                    idiomaList,
+                    setIdiomaList,
+                    nombre_de_idioma,
+                    rango_de_idioma,
+                    setNotificacion
+                  )}
+                  disabled={isDisabled()}
+                >
+                  <img width="15px" height="15px" src="src\assets\add.svg" />
+                </button>
+              </div>
+              <input
+                type="range"
+                name="rango"
+                value={rango_de_idioma}
+                onChange={handle_change(setRango_de_idioma)}
+              />
+            </section>
+            <ul>
+              <PilaForm
+                lenguajeList={idiomaList}
+                setLenguajeList={setIdiomaList}
               />
             </ul>
           </div>
