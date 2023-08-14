@@ -73,6 +73,19 @@ export function Formulario({
       </div>
 
       <div className="form-encabezado eliminar-border">
+        <div className="form-encabezado__fullnombreYprofesion">
+          <section className="form-encabezado__elementos">
+            <label className="form-encabezado_label">Portafolio</label>
+            <input
+              type="text"
+              onChange={datosPersonales.set_portafolio}
+              placeholder={datosPersonales.portafolio}
+            />
+          </section>
+        </div>
+      </div>
+
+      <div className="form-encabezado eliminar-border">
         <section className="form-encabezado__elementos">
           <div className="custom-file-input">
             <input

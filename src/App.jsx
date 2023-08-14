@@ -10,6 +10,7 @@ function App() {
   const [profesion, setProfesion] = useState("Programador");
   const [telefono, setTelefono] = useState("+5731234567");
   const [correo, setCorreo] = useState("Leoca34@gmail.com");
+  const [portafolio, setPortafolio] = useState("www.ejemplo.com");
   const [portadaURL, setPortadaURL] = useState(
     "img/Carpincho esperando frente a un rio.png"
   );
@@ -34,11 +35,13 @@ function App() {
     telefono,
     correo,
     portadaURL,
+    portafolio,
     set_fullnombre: handle_change(setFullName),
     set_profesion: handle_change(setProfesion),
     set_telefono: handle_change(setTelefono),
     set_correo: handle_change(setCorreo),
     set_portadaURL: handle_portadaURL_change(setPortadaURL),
+    set_portafolio: handle_change(setPortafolio),
   };
 
   return (

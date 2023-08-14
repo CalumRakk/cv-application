@@ -30,7 +30,7 @@ export function CvIzquierdo({
 
         <section className="contacto__contenedor">
           <h3 className="contacto__titulo">PORTAFOLIO</h3>
-          <span>www.ejemplo.com </span>
+          <span>{datosPersonales.portafolio} </span>
         </section>
       </div>
     </>

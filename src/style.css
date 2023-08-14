@@ -294,8 +294,7 @@ section.form-encabezado__elementos:nth-child(2) {
 }
 
 .cv__encabezado h1,
-h2,
-span {
+h2 {
   text-transform: capitalize;
 }
 
