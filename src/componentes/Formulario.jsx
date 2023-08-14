@@ -130,13 +130,11 @@ export function Formulario({
         </div>
       </div>
 
-      <div className="form-encabezado">
+      <div className="form-encabezado eliminar-border">
         <div className="form-encabezado__fullnombreYprofesion">
           <div className="pila">
             <section className="pila__input">
-              <label className="form-encabezado_label">
-                Lenguajes de Programación
-              </label>
+              <label className="form-encabezado_label">Otros Programas</label>
               <div>
                 <input
                   type="text"

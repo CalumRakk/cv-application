@@ -2,8 +2,7 @@ import { useState } from "react";
 import "./style.css";
 import { Encebezado } from "./componentes/Encebezado.jsx";
 import { Formulario } from "./componentes/Formulario.jsx";
-import { Contacto } from "./componentes/Contacto.jsx";
-import Habilidades from "./componentes/Habilidades.jsx";
+import { CvIzquierdo } from "./componentes/CvIzquierdo.jsx";
 import { handle_change, handle_portadaURL_change } from "./utils";
 
 function App() {
@@ -56,37 +55,10 @@ function App() {
             profesion={profesion}
             portadaURL={portadaURL}
           />
-
-          <div className="cv__izquierdo">
-            <Contacto telefono={telefono} correo={correo} />
-            <Habilidades
-              lenguajeList={lenguajeList}
-              programaList={programaList}
-            />
-
-            <section className="contacto__contenedor">
-              <h3 className="contacto__titulo">LANGUAGE</h3>
-              <ul className="contacto_lista">
-                <li>
-                  <span>Ingles</span>
-                  <div className="progress">
-                    <div className="progress-bar">35%</div>
-                  </div>
-                </li>
-                <li>
-                  <span>Arabe</span>
-                  <div className="progress">
-                    <div className="progress-bar">35%</div>
-                  </div>
-                </li>
-              </ul>
-            </section>
-
-            <section className="contacto__contenedor">
-              <h3 className="contacto__titulo">PORTAFOLIO</h3>
-              <span>www.ejemplo.com </span>
-            </section>
-          </div>
+          <CvIzquierdo
+            lenguajeList={lenguajeList}
+            programaList={programaList}
+          />
 
           <div className="cv__derecho">
             Breve presentación y descripción de tus fortalezas y cualidades que
