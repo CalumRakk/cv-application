@@ -74,7 +74,11 @@ function App() {
 
           <div className="cv__derecho">
             Breve presentación y descripción de tus fortalezas y cualidades que
-            te hacen un buen postulante al empleo.
+            te hacen un buen postulante al empleo. Como programador, destaco por
+            mi creatividad en la resolución de problemas. Además, mi enfoque
+            colaborativo y mi constante actualización en las últimas tendencias
+            me convierten en un candidato ideal para impulsar proyectos
+            innovadores
             ******************************************************************************************************************
             <div className="experienciaLaboral">
               <section className="experienciaLaboral__elementos">
@@ -93,22 +97,10 @@ function App() {
                 </section>
                 <section>
                   <h4 className="experienciaLaboral__subtitulo">
-                    Nombre de la empresa, Lugar
+                    Caotic Web, Inglaterra
                   </h4>
                   <ul>
-                    <li>
-                      Puesto desempeñado, fecha de inicio - fecha de salida
-                    </li>
-                  </ul>
-                </section>
-                <section>
-                  <h4 className="experienciaLaboral__subtitulo">
-                    Nombre de la empresa, Lugar
-                  </h4>
-                  <ul>
-                    <li>
-                      Puesto desempeñado, fecha de inicio - fecha de salida
-                    </li>
+                    <li>Programador Full Stack, 2018/2019</li>
                   </ul>
                 </section>
               </section>
@@ -123,15 +115,9 @@ function App() {
                 </section>
                 <section>
                   <h4 className="experienciaLaboral__subtitulo">
-                    Nombre del cv de estudios, Lugar
+                    Universidad de Buenos Aires, Argentina.
                   </h4>
-                  <p>Nombre de la carrera , año de inicio</p>
-                </section>
-                <section>
-                  <h4 className="experienciaLaboral__subtitulo">
-                    Nombre del cv de estudios, Lugar
-                  </h4>
-                  <p>Nombre de la carrera , año de inicio</p>
+                  <p>Diseño de software , 2017</p>
                 </section>
               </section>
 
@@ -141,8 +127,7 @@ function App() {
                 </h3>
                 <ul>
                   <li>Cursos tomados y certificados</li>
-                  <li>Capacitaciones tomadas y certificados</li>
-                  <li>Cursos tomados y certificados</li>
+                  <li>Adobe para diseñadores gráficos, Adobe online</li>
                 </ul>
               </section>
             </div>
