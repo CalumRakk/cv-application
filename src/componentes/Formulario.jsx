@@ -241,6 +241,20 @@ export function Formulario({
           </div>
         </div>
       </div>
+
+      <div className="form-encabezado">
+        <div className="form-encabezado__fullnombreYprofesion">
+          <section className="form-encabezado__elementos">
+            <label className="form-encabezado_label">Descripcion</label>
+            <textarea
+              value={datosPersonales.descripcion}
+              rows="7"
+              cols="60"
+              onChange={datosPersonales.set_descripcion}
+            />
+          </section>
+        </div>
+      </div>
     </>
   );
 }

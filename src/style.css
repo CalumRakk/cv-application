@@ -383,3 +383,7 @@ h2 {
   cursor: not-allowed;
   background-color: #cfcfcf;
 }
+
+textarea {
+  resize: none;
+}

@@ -3,14 +3,18 @@ import "./style.css";
 import { Encebezado } from "./componentes/Encebezado.jsx";
 import { Formulario } from "./componentes/Formulario.jsx";
 import { CvIzquierdo } from "./componentes/CvIzquierdo.jsx";
+import { CvDerecho } from "./componentes/CvDerecho";
 import { handle_change, handle_portadaURL_change } from "./utils";
 
+const DESCRIPCION =
+  "Breve presentación y descripción de tus fortalezas y cualidades que te hacen un buen postulante al empleo.\n******************************************************************************************************************";
 function App() {
   const [fullnombre, setFullName] = useState("Leonardo C.");
   const [profesion, setProfesion] = useState("Programador");
   const [telefono, setTelefono] = useState("+5731234567");
   const [correo, setCorreo] = useState("Leoca34@gmail.com");
   const [portafolio, setPortafolio] = useState("www.ejemplo.com");
+  const [descripcion, setDescripcion] = useState(DESCRIPCION);
   const [portadaURL, setPortadaURL] = useState(
     "img/Carpincho esperando frente a un rio.png"
   );
@@ -36,12 +40,14 @@ function App() {
     correo,
     portadaURL,
     portafolio,
+    descripcion,
     set_fullnombre: handle_change(setFullName),
     set_profesion: handle_change(setProfesion),
     set_telefono: handle_change(setTelefono),
     set_correo: handle_change(setCorreo),
     set_portadaURL: handle_portadaURL_change(setPortadaURL),
     set_portafolio: handle_change(setPortafolio),
+    set_descripcion: handle_change(setDescripcion),
   };
 
   return (
@@ -72,66 +78,7 @@ function App() {
             idiomaList={idiomaList}
           />
 
-          <div className="cv__derecho">
-            Breve presentación y descripción de tus fortalezas y cualidades que
-            te hacen un buen postulante al empleo. Como programador, destaco por
-            mi creatividad en la resolución de problemas. Además, mi enfoque
-            colaborativo y mi constante actualización en las últimas tendencias
-            me convierten en un candidato ideal para impulsar proyectos
-            innovadores
-            ******************************************************************************************************************
-            <div className="experienciaLaboral">
-              <section className="experienciaLaboral__elementos">
-                <h3 className="experienciaLaboral__titulo">
-                  Experiencia Laboral
-                </h3>
-                <section>
-                  <h4 className="experienciaLaboral__subtitulo">
-                    Nombre de la empresa, Lugar
-                  </h4>
-                  <ul>
-                    <li>
-                      Puesto desempeñado, fecha de inicio - fecha de salida
-                    </li>
-                  </ul>
-                </section>
-                <section>
-                  <h4 className="experienciaLaboral__subtitulo">
-                    Caotic Web, Inglaterra
-                  </h4>
-                  <ul>
-                    <li>Programador Full Stack, 2018/2019</li>
-                  </ul>
-                </section>
-              </section>
-
-              <section className="experienciaLaboral__elementos">
-                <h3 className="experienciaLaboral__titulo">Educación</h3>
-                <section>
-                  <h4 className="experienciaLaboral__subtitulo">
-                    Nombre del cv de estudios, Lugar
-                  </h4>
-                  <p>Nombre de la carrera , año de inicio</p>
-                </section>
-                <section>
-                  <h4 className="experienciaLaboral__subtitulo">
-                    Universidad de Buenos Aires, Argentina.
-                  </h4>
-                  <p>Diseño de software , 2017</p>
-                </section>
-              </section>
-
-              <section className="experienciaLaboral__elementos">
-                <h3 className="experienciaLaboral__titulo">
-                  Cursos y Capacitaciones
-                </h3>
-                <ul>
-                  <li>Cursos tomados y certificados</li>
-                  <li>Adobe para diseñadores gráficos, Adobe online</li>
-                </ul>
-              </section>
-            </div>
-          </div>
+          <CvDerecho datosPersonales={datosPersonales} />
         </aside>
       </main>
     </>
