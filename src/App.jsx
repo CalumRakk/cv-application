@@ -63,6 +63,7 @@ function App() {
             portadaURL={portadaURL}
           />
           <CvIzquierdo
+            datosPersonales={datosPersonales}
             lenguajeList={lenguajeList}
             programaList={programaList}
             idiomaList={idiomaList}

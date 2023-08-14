@@ -1,10 +1,19 @@
 //
 import { Pila } from "./CvIzquierdo.Pila.jsx";
 import { Contacto } from "./CvIzquierdo.Contacto.jsx";
-export function CvIzquierdo({ lenguajeList, programaList, idiomaList }) {
+export function CvIzquierdo({
+  datosPersonales,
+  lenguajeList,
+  programaList,
+  idiomaList,
+}) {
   return (
     <>
       <div className="cv__izquierdo">
+        <Contacto
+          telefono={datosPersonales.telefono}
+          correo={datosPersonales.correo}
+        />
         <section className="contacto__contenedor">
           <h3 className="contacto__titulo">HABILIDADES</h3>
           <h4 className="contacto__subtitulo">Lenguajes de Programación</h4>
